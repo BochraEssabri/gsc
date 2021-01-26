@@ -1,0 +1,55 @@
+<!-- Fichier de configuration de jpa -->
+<!-- Référence: https://www.javahelps.com/2015/08/jpa-hello-world-using-hibernate.html -->
+
+<persistence version="2.0"
+    xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    
+    <!-- Nom de référence à utiliser pour identifier cette configuration -->
+    <persistence-unit name="jpaGsc" >
+        
+        <!-- Classe d'implementation de JPA par Hibernate. -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        
+        <!-- les classes entités -->
+        <class>ma.ac.fstt.sim.jpa.entities.Carburant</class>
+        <properties>
+            <!-- La connecteur JDBC vers MySQL -->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            
+            <!-- Le dialect spécifie les requêtes sql à utiliser
+            	 cela permet d'éviter des erreurs inattendues dues à une différence entre les type de BD.
+            	 On a choisi InnoDBDialect car dans la BD, on a mis le mouteur InnoDB pour pouvoir 
+            	 creer proprement les relations entre les tables avec MySQL.
+            	 ref: https://www.javatpoint.com/dialects-in-hibernate#:~:text=SQL%20Dialects%20in%20Hibernate,the%20configuration%20of%20SQL%20dialect.
+             -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+            
+            <!-- 
+            	Pour modifier automatiquement des tables (bd) suite à une modification sur les entités (java)
+            	la valeur create permet de créer les tables automatiquement pour la première fois, 
+            	mais si on la garde, à chaque redémarrage de l'application, les données de la table seront supprimées
+            	ref: https://github.com/geowarin/hibernate-examples/blob/master/hibernate-jpa-standalone-dbunit/src/test/resources/META-INF/persistence.xml
+            -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            
+            <!-- Pour afficher et formatter ( affichage sur plusieurs lignes) les requêtes en java 
+            	 lors d'une transaction sql. 
+            -->
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			
+            <!--  URL JDBC vers la base de données -
+            	  l'ajout de UTC sert à eviter d'envoyer le timezone local par hibernate ce qui
+            	  peut ne pas être compataible avec le serveur de la BD.
+            -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/gsc?serverTimezone=UTC" />
+            
+            <!-- The database username -->
+            <property name="javax.persistence.jdbc.user" value="root" />
+            
+            <!-- The database password -->
+            <property name="javax.persistence.jdbc.password" value="" />
+        </properties>
+    </persistence-unit>
+</persistence>

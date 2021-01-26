@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ma.ac.fstt.sim</groupId>
+		<artifactId>gestion-stations-carburant</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>gestion-stations-carburant-jpa</artifactId>
+
+	<dependencies>
+		<!--Specifications JPA pour utilisation avec l'implementation de Hibernate -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.2.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+		<!-- Framework Hibernate pour implémentation de JPA. -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.4.0.Final</version>
+			<!-- Cette dependence est utilisée seulement lors de l'execution et non 
+				lors de la compilation -->
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<!-- Connecteur Java avec la base de données. -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.12</version>
+		</dependency>
+		
+		<!-- Projet commun qui contant les partie communes telles que le logger, messages... -->
+		<dependency>
+			<groupId>ma.ac.fstt.sim</groupId>
+			<artifactId>gestion-stations-carburant-commun</artifactId>
+			<version>${version-commun}</version>
+		</dependency>
+	</dependencies>
+	
+	
+	<build>
+		<plugins>
+			<!-- Lancement du projet JPA pour effectuer les tests. -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<mainClass>ma.ac.fstt.sim.jpa.test.Main</mainClass>
+
+				</configuration>
+
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
