@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ma.ac.fstt.sim</groupId>
+		<artifactId>gestion-stations-carburant</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>gestion-stations-carburant-rest</artifactId>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>gestion-stations-carburant-rest-jersey</module>
+	</modules>
+
+
+	<build>
+		<!-- Pour tansformer les variables maven vers le fichier -->
+		<!-- ressources/project.properties -->
+		<!-- utile pour récuperer la version ou le chemin racine du projet -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/project.properties</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/project.properties</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/</directory>
+				<includes>
+					<include>webapp/**/*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+</project>
