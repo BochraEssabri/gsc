@@ -5,7 +5,7 @@
 
 Plus de détails et démonstration sont disponibles [ici](https://drive.google.com/file/d/1zQh6br8H__KviRTrARl1XU_A6GHcLrj1/view?usp=sharing)
 
-Ce projet est réalisé en binome dans le cadre de mes études en master systèmes informatiques et mobiles, module applications distribuées.
+Ce projet est réalisé en binôme dans le cadre de mes études en master systèmes informatiques et mobiles, module applications distribuées.
 - GSC est une application Java EE distribuée sous forme de plusieurs applications de différentes technologies ( application web, WS Rest, WS Soap, et Persistance avec JPA ) qui permet d'assurer la bonne gestion des carburants ( Essence, Gazole...) sur plusieurs stations au Maroc .
 - Elle possède une IHM Web sécurisée, qui se communique avec des web services Rest sécurisées à fin de permet à un utilisateur de faire une recherche sur les prix de carburants en fonction d'une date, une station et une ville. Ces deux éléments forment la partie rest-Jersey de notre projet ( comme l'indique son, elle a été réalisée à l'aide de Jersey)
 - La partie Rest communique avec la partie WS SOAP pour récupérer les données concernant les prix des carburants et d'autres informations. C'est une sorte de simulation d'une communication avec une application externe.
