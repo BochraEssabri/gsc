@@ -1,5 +1,9 @@
-# gsc
-GSC - Gestion stations carburants
+
+#GSC - Gestion stations carburants
+
+## Résumé sur le projet 
+=======================
+Plus de détails et démonstration sont disponible [ici](https://drive.google.com/file/d/1zQh6br8H__KviRTrARl1XU_A6GHcLrj1/view?usp=sharing)
 
 Ce projet est réalisé en binome dans le cadre de mes études en master systèmes informatiques et mobiles, module applications distribuées.
 - GSC est une application Java EE distribuée sous forme de plusieurs applications de différentes technologies ( application web, WS Rest, WS Soap, et Persistance avec JPA ) qui permet d'assurer la bonne gestion des carburants ( Essence, Gazole...) sur plusieurs stations au Maroc .
