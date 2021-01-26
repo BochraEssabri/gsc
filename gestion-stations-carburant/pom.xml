@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Le projet principal (p�re) qui va controler tous le reste. --><!-- R�f�rence: https://maven.apache.org/pom.html --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ma.ac.fstt.sim</groupId>
+	<artifactId>gestion-stations-carburant</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<profiles>
+		<!-- Profile utilisé pour la partie cliente -->
+		<profile>
+			<id>default</id>
+			<activation>
+				<!-- Profile activé par défaut -->
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+
+				<module>gestion-stations-carburant-commun</module>
+				<!-- <module>gestion-stations-carburant-rest-jersey</module> -->
+				<module>gestion-stations-carburant-rest</module>
+
+			</modules>
+		</profile>
+
+		<!-- Profile utilisé pour compiler la partie ws et JPA -->
+		<profile>
+			<id>server_ws</id>
+			<modules>
+
+				<module>gestion-stations-carburant-commun</module>
+				<module>gestion-stations-carburant-jpa</module>
+				<module>gestion-stations-carburant-ws</module>
+
+
+			</modules>
+		</profile>
+	</profiles>
+
+
+	<!-- Les propriétés que l'on va utiliser via ${nom_propriété} -->
+	<properties>
+
+		<!-- La version java utilisée -->
+		<version-commun>0.0.1-SNAPSHOT</version-commun>
+		<version-JVM>1.8</version-JVM>
+		<version-log4J>1.2.17</version-log4J>
+		<version-jersy>1.19</version-jersy>
+		<!-- <version-servlet>6.0.44</version-servlet> -->
+		<version-servlet>6.0.44</version-servlet>
+		<version-tomcat>8.5.23</version-tomcat>
+
+		<!-- Adresses Webservices SOAP -->
+		<wsdl-url-carburants>http://localhost:8081/gsc/carburants?wsdl</wsdl-url-carburants>
+		<wsdl-url-stations>http://localhost:8081/gsc/stations?wsdl</wsdl-url-stations>
+		<wsdl-url-prix>http://localhost:8081/gsc/prix?wsdl</wsdl-url-prix>
+		<wsdl-url-authentification>http://localhost:8081/gsc/authentification?wsdl</wsdl-url-authentification>
+		
+		
+		
+	</properties>
+
+
+	
+	<build>
+		<plugins>
+			<!-- Plugin pour forcer l'utilisation d'une version Java -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<source>${version-JVM}</source>
+					<target>${version-JVM}</target>
+				</configuration>
+			</plugin>
+			<!-- Pour integrer les dependences dans les Jar générées -->
+			<!-- Pas besoin de group id, c'est intégré automatiquement par maven -->
+			<plugin>
+
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.3.0</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+		</plugins>
+
+
+		<resources>
+			<!-- Ici les resources utiles à garder mais pas necessaire de les inclure 
+				dans les packages généré comme les jar. -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>externale-resources/**/*</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
+	</build>
+
+</project>
