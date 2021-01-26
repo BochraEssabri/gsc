@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Le projet père: projet principal -->
+	<parent>
+		<groupId>ma.ac.fstt.sim</groupId>
+		<artifactId>gestion-stations-carburant</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>gestion-stations-carburant-ws</artifactId>
+
+
+	<dependencies>
+		<!-- Projet commun qui contant les partie communes telles que le logger. -->
+		<dependency>
+			<groupId>ma.ac.fstt.sim</groupId>
+			<artifactId>gestion-stations-carburant-commun</artifactId>
+			<version>${version-commun}</version>
+		</dependency>
+
+		<!-- Utilisation du projet ( Module Maven ) JPA pour invoquer les BD à 
+			partir du projet ws. Reférence: https://stackoverflow.com/questions/808516/maven-and-dependent-modules -->
+		<dependency>
+			<groupId>ma.ac.fstt.sim</groupId>
+			<artifactId>gestion-stations-carburant-jpa</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<!-- Implementation de l'API JAX B pour pouvoir Marshaller les résultats 
+			et Unmarshaller les entrées pour les endpointes SOAP. -->
+		<!-- Cela résout le problème de Binding entre les objets et la génération xml -->
+		<!-- https://www.youtube.com/watch?v=Z9qkk2IEH1k&ab_channel=CodeJava -->
+		<!-- https://stackoverflow.com/questions/10002006/how-to-specify-a-particular-jaxb-implementation -->
+		<!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
+		<!-- https://mvnrepository.com/artifact/javax.xml/jaxb-api -->
+		<dependency>
+			<groupId>javax.xml</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.1</version>
+		</dependency>
+
+
+	</dependencies>
+	<profiles>
+		<profile>
+			<id>running</id>
+			<build>
+				<plugins>
+
+					<!-- Pour compiler le code vers un fichier jar par Maven -->
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.2.1</version>
+						<configuration>
+							<mainClass>ma.ac.fstt.sim.ws.main.EndPoints</mainClass>
+
+						</configuration>
+					</plugin>
+
+
+					<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>truezip-maven-plugin</artifactId> 
+						<version>1.2</version> <executions> <execution> <id>remove-RSA-and-SF-files</id> 
+						<goals> <goal>remove</goal> </goals> <phase>package</phase> <configuration> 
+						<fileset> <directory>${archive}/META-INF</directory> <includes> <include>**/*.RSA</include> 
+						<include>**/*.SF</include> <include>**/*.DSA</include> </includes> </fileset> 
+						</configuration> </execution> </executions> </plugin> -->
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
+
+</project>
