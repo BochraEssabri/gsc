@@ -1,0 +1,148 @@
+.container-table100 {
+	background : linear-gradient(45deg, #ccc417, #c850c0);
+}
+body{
+	overflow-y:hidden;
+	min-width: 500px;
+}
+
+.titre{
+	background-color: #343a4066;
+    height: 35px;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+/* Pour faire défiler le tableau seulement sans la page */
+.tbody{
+	overflow-y: auto;
+    height: 300px;
+}
+
+.theader>table{
+	    border-bottom-right-radius: 0px;
+	    border-bottom-left-radius: 0px;
+}
+
+.tbody>table{
+	    border-radius: 0px;
+}
+
+sub{
+	font-size: 12px;
+}
+
+.chargement{
+	margin-top: 12%;
+    margin-left: 40%;
+	display: none;
+}
+.chargement .text{
+	margin-top: -30px;
+    margin-left: 50px;
+    vertical-align: middle;
+}
+
+/*
+	Par défaut cachée pour afficher chargement de données.
+
+*/
+.contenu-page, .container-form-grc, .container-list-grc{
+	display:none
+}
+
+.container-form-grc{
+	padding-top:5%;
+    padding-left:20%
+}
+.activer-container{
+	display:block;
+}
+
+.date-prix#date-prix{
+	margin-top: -6px;
+	
+}
+
+#boutton-valider {
+    color: #100f0f;
+    background-color: #51d615;
+    border-color: #6c757d;
+    margin-top:33px
+}
+
+#boutton-valider.disabled{
+	opacity: .50;
+	color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+body{
+	background: linear-gradient(45deg, #ccc417, #c850c0);
+}
+
+
+.resultat-recherche-prix{
+	width: 74.5%;
+	/*par défaut*/
+	display: none;
+}
+#titre_resultat_prix{
+	text-decoration: underline;
+}
+
+fieldset.resultat-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.resultat-border {
+    font-size: 0.9em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+    margin-bottom:0;
+    border-color: #521b1b;
+}
+
+.control-group.row{
+	margin-left: 20px;
+}
+
+.prix.controls{
+	/* padding-left:4px; */
+	font-size: ;
+}
+
+.container-form-grc.activer-container{
+    padding-left: 20%;
+}
+
+.container-form-grc.form-connexion-utilisateur{
+	display: block;
+    padding-left: 30%;   
+}
+
+/**
+Uttilisateur
+*/
+
+.nom-utilisateur{
+	color:white;
+}
+.lien-se-deconnecter>a{
+	color:gray;
+}
+
+#AUTH_KO{
+	color: #a50f0f;
+    font-weight: bold;
+	
+}
+
