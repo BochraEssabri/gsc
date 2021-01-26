@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "bf6a2813-daa1-45a2-b6c9-d53c53360fad",
+		"name": "grc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "finAllCarburants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCarburant",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"solaire\",\r\n        \"nomCarburant\": \"solaire\",\r\n        \"prixCarburantList\" : []\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gsc-jersey/gsc/carburants/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gsc-jersey",
+						"gsc",
+						"carburants",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"solaire\",\r\n        \"nomCarburant\": \"solaire\",\r\n        \"prixCarburantList\" : []\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gsc-jersey/gsc/carburants/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gsc-jersey",
+						"gsc",
+						"carburants",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stations Create",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"solaire\",\r\n        \"nomCarburant\": \"solaire\",\r\n        \"prixCarburantList\" : []\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gsc-jersey/gsc/carburants/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gsc-jersey",
+						"gsc",
+						"carburants",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prixCarburants",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"date\": \"2020/12/22\",\r\n        \"prix\": 9.33,\r\n        \"carburant\" : {id}\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gsc-jersey/gsc/prixCarburants/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gsc-jersey",
+						"gsc",
+						"prixCarburants",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prixCarburants",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"solaire\",\r\n        \"nomCarburant\": \"solaire\",\r\n        \"prixCarburantList\" : []\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gsc-jersey/gsc/carburants/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gsc-jersey",
+						"gsc",
+						"carburants",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
